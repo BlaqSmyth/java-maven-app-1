@@ -12,7 +12,7 @@ pipeline {
         }
         stage("build") {
             when {
-                expressions {
+                expression {
                     BRANCH_NAME == "master"
                 }
             }
@@ -25,7 +25,7 @@ pipeline {
         }
         stage("deploy") {
             when {
-                expressions {
+                expression {
                     BRANCH_NAME == "master"
                 }
             }
