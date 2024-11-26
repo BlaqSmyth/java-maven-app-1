@@ -19,14 +19,14 @@ pipeline {
         stage("build jar") {
             steps {
                 script {
-                    buildJar()
+                    buildJar 'blaqsmyth/demo-app:jma-5.0'
                 }
             }
         }
         stage("build image") {
             steps {
                 script {
-                    buildImage()
+                    buildImage 'blaqsmyth/demo-app:jma-5.0'
                 }
             }
         }
