@@ -23,10 +23,12 @@ pipeline {
                 }
             }
         }
-        stage("build image") {
+        stage("build and push image") {
             steps {
                 script {
                     buildImage 'blaqsmyth/demo-app:jma-5.0'
+                    dockerLogin()
+                    dockerPush 'blaqsmyth/demo-app:jma-5.0'
                 }
             }
         }
